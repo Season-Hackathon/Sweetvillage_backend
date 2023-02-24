@@ -1,0 +1,156 @@
+<div>
+
+    <form action="{% url 'question' %}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <p>1.문제를 작성해주세요 : <input type="text" name="question"></p>
+        <!-- <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op1" id="radio1" value="O" checked>
+                <label class="form-check-label" for="radio1">
+                    O
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op2" id="radio2" value="X" checked>
+                <label class="form-check-label" for="radio2">
+                    X
+                </label>
+            </div> -->
+            <p>정답 : 
+                <input type="radio" name="ans" id="radio1" value="O">
+                <label class="form-check-label" for="radio1">O</label>
+                <input type="radio" name="ans" id="radio2" value="X">
+                <label class="form-check-label" for="radio2">X</label>
+            </p>
+        </div>
+        
+<!-- 2번 -->
+        <p>2.문제를 작성해주세요 : <input type="text" name="question2"></p>
+        <!-- <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op3" id="radio1" value="O" checked>
+                <label class="form-check-label" for="radio1">
+                    O
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op4" id="radio2" value="X" checked>
+                <label class="form-check-label" for="radio2">
+                    X
+                </label>
+            </div> -->
+            <p>정답 : <input type="radio" name="ans2" id="radio1" value="O">
+                <label class="form-check-label" for="radio1">O</label>
+                <input type="radio" name="ans2" id="radio2" value="X">
+                <label class="form-check-label" for="radio2">X</label>
+            </p>
+        </div>
+<!-- 3번 -->
+        <p>3.문제를 작성해주세요 : <input type="text" name="question3"></p>
+        <!-- <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op5" id="radio1" value="O" checked>
+                <label class="form-check-label" for="radio1">
+                    O
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op6" id="radio2" value="X" checked> 
+                <label class="form-check-label" for="radio2">
+                    X
+                </label>
+            </div> -->
+            <p>정답 : <input type="radio" name="ans3" id="radio1" value="O">
+                <label class="form-check-label" for="radio1">O</label>
+                <input type="radio" name="ans3" id="radio2" value="X">
+                <label class="form-check-label" for="radio2">X</label>
+            </p>
+        </div>
+<!-- 4번 -->
+        <p>4.문제를 작성해주세요 : <input type="text" name="question4"></p>
+        <!-- <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op7" id="radio1" value="O" checked>
+                <label class="form-check-label" for="radio1">
+                    O
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op8" id="radio2" value="X" checked>
+                <label class="form-check-label" for="radio2">
+                    X
+                </label>
+            </div> -->
+            <p>정답 : <input type="radio" name="ans4" id="radio1" value="O">
+                <label class="form-check-label" for="radio1">O</label>
+                <input type="radio" name="ans4" id="radio2" value="X">
+                <label class="form-check-label" for="radio2">X</label>
+            </p>
+        </div>
+<!-- 5번 -->
+        <p>5.문제를 작성해주세요 : <input type="text" name="question5"></p>
+        <!-- <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op9" id="radio1" value="O" checked>
+                <label class="form-check-label" for="radio1">
+                    O
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op10" id="radio2" value="X" checked>
+                <label class="form-check-label" for="radio2">
+                    X
+                </label>
+            </div> -->
+            <p>정답 :<input type="radio" name="ans5" id="radio1" value="O">
+                <label class="form-check-label" for="radio1">O</label>
+                <input type="radio" name="ans5" id="radio2" value="X">
+                <label class="form-check-label" for="radio2">X</label>
+            </p>
+        </div>
+<!-- 6번 -->
+        <p>6.문제를 작성해주세요 : <input type="text" name="question6"></p>
+        <!-- <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op11" id="radio1" value="O" checked>
+                <label class="form-check-label" for="radio1">
+                    O
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op12" id="radio2" value="X" checked>
+                <label class="form-check-label" for="radio2">
+                    X
+                </label>
+            </div> -->
+            <p>정답 :<input type="radio" name="ans6" id="radio1" value="O">
+                <label class="form-check-label" for="radio1">O</label>
+                <input type="radio" name="ans6" id="radio2" value="X">
+                <label class="form-check-label" for="radio2">X</label>
+            </p>
+        </div>
+<!-- 7번 -->
+        <p>7.문제를 작성해주세요 : <input type="text" name="question7"></p>
+        <!-- <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op13" id="radio1" value="O" checked>
+                <label class="form-check-label" for="radio1">
+                    O
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="op14" id="radio2" value="X" checked>
+                <label class="form-check-label" for="radio2">
+                    X
+                </label>
+            </div> -->
+            <p>정답 : <input type="radio" name="ans7" id="radio1" value="O">
+                <label class="form-check-label" for="radio1">O</label>
+                <input type="radio" name="ans7" id="radio2" value="X">
+                <label class="form-check-label" for="radio2">X</label>
+            </p>
+        </div>
+
+        <button type="submit">완료</button>
+    </form>
+    </div>
