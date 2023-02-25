@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'SUIT-Regular';
+}
+
+body {
+    background-color: #FFFBF5 !important;
+}
+
+.quizbox {
+    background-color: #FF7878;
+    outline: 1px dashed #fff;
+    outline-offset: -15px;
+}
+
+.quizbox-last {
+    outline: 1px dashed #3D2727;
+    outline-offset: -15px;
+}
+
+.quizbox textarea {
+    resize: none;
+}
+
+/* O X 퀴즈 */
+.form_radio_btn {
+    font-size: 6rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px -6px #222;
+    margin: 0px 10px 0px 10px;
+}
+
+.form_radio_btn input[type=radio] {
+    display: none;
+}
+
+.form_radio_btn label {
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+}
+ 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+    background: #FF9C9C;
+    color: #FF5E5E;
+}
+ 
+/* Disabled */
+.form_radio_btn input[type=radio] + label {
+    background: #FFC1C1;
+    color: #513636;
+}
+
+.finish {
+    background-color: #3D2727 !important;
+    color: #FFC2C2 !important;
+    padding: 5px 25px 5px 25px !important;
+}
+
+.candy-cane {
+    width: 100px;
+    top: 10%;
+    left: 10%;
+}
+
+.candy {
+    width: 100px;
+    bottom: 10%;
+    right: 10%;
+}
+
+.vector-1 {
+    top: 10%;
+    right: 10%;
+    width: 30px;
+}
+
+.vector-2 {
+    bottom: 10%;
+    left: 10%;
+    width: 30px;
+}
+
+.namebox {
+    padding:19px 12px 19px 12px !important;
+}
+
+/* gender 설정 */
+.gender_radio_btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.gender_radio_btn input[type=radio] {
+    display: none;
+}
+
+.gender_radio_btn label {
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+}
+ 
+/* Checked */
+.gender_radio_btn input[type=radio]:checked + label {
+    background: #FF9C9C;
+    color: #FFFFFF;
+}
+ 
+/* Disabled */
+.gender_radio_btn input[type=radio] + label {
+    background: #FFFFFF;
+    color: #FF6464;
+}
