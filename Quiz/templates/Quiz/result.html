@@ -1,25 +1,37 @@
-{% extends 'Quiz/dependencies.html' %}
+<!-- 랭킹과 나무가 이곳에서 보여야함 -->
 
-{% block content %}
-
-<div class="container ">
-        
-    <div class="card-columns" style="padding: 10px; margin: 20px;">
-        <div class="card" align="centre " style="width: 32rem; border:5px black solid">
-            <img class="card-img-top" src="http://kmit.in/emagazine/wp-content/uploads/2018/02/karnataka-results.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Score: {{score}}</h5>
-
-                <p class="card-text">Percentage: {{percent}}%</p>
-                <p class="card-text">Time Taken: {{time}} seconds</p>
-                <p class="card-text">Correct answers: {{correct}}</p>
-                <p class="card-text">Incorrect answers: {{wrong}}</p>
-                <p class="card-text">Total questions: {{total}}</p>
-                <h5>All the best for next quiz!</h5>
+<center>
+    <div class="container"
+    style="margin-top: 10%; margin-bottom: 10%;">
+            
+        <div class="card-columns">
+            <div class="card" align="centre " style="width: 32rem; border:3px pink dotted">
+                <img class="card-img-top" 
+                src="https://postfiles.pstatic.net/MjAyMzAyMjVfMjk1/MDAxNjc3MzE1OTUzODMw.8Atq__529WPd1ux_B8Q05uMlXh5IttcPoXGwFaDsAAgg.-jlodxPpwQaIfLeXZEOEOMCUeunDkRH9HJ1AxE3gaYsg.PNG.hansuyeon23/%EB%AC%AD_2.png?type=w773" 
+                alt="Card image cap" >
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Score: {{score}}</h5> -->
+    <!-- 
+                    <p class="card-text">Percentage: {{percent}}%</p>
+                    <p class="card-text">Time Taken: {{time}} seconds</p>
+                    <p class="card-text">Correct answers: {{correct}}</p>
+                    <p class="card-text">Incorrect answers: {{wrong}}</p>
+                    <p class="card-text">Total questions: {{total}}</p> -->
+                    
+                    {% for v in visitors %}
+                    <h4><center> 
+                    
+                        <div style="padding:10px;margin:5px;background-color: pink; border-radius:30px;
+                        width:70%;box-shadow: 3px 3px 3px;">
+                            {{v.name}} : {{v.score}}점</div>
+                    
+                    </center><h4>
+                    {% endfor %}
+                    
+                    <h5></h5>
+                </div>
             </div>
         </div>
+    
     </div>
-
-</div>
-
-{% endblock %}
+    </center>
