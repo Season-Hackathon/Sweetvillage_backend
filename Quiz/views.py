@@ -1,13 +1,13 @@
-from django.shortcuts import redirect,render
+from django.shortcuts import get_object_or_404, redirect,render
 from django.contrib.auth import login,logout,authenticate
 from .forms import *
 from .models import *
-
+from django.contrib.auth.models import User
 from django.forms import formset_factory
 
 # Create your views here.
 def home(request):
-    request.user
+    
     if request.method == 'POST':
         print(request.POST)
         questions=QuesModel.objects.all()
@@ -70,33 +70,79 @@ def home(request):
                 wrong+=1
         
         # 여기에 랭킹과 나무를 띄워야함    
-        percent = score/(total*10) *100
+        #percent = score/(total*10) *100
         context = {
+            #'user':user,
             'score':score,
-            'time': request.POST.get('timer'),
+            #'time': request.POST.get('timer'),
             'correct':correct,
-            'wrong':wrong,
-            'percent':percent,
+            #'wrong':wrong,
+            #'percent':percent,
             'total':total,
         }
+        current_visitor = request.user
+        print(current_visitor.id)
+        visitor = Visitor.objects.all()
+        current_visitor = get_object_or_404(User, pk=current_visitor.id)
+        for visit in visitor:
+            if visit.user == current_visitor:
+                visit.score = score 
+                visit.save()
+        
+        context = {
+            'score':score,
+            'visitors':visitor
+        }
+        
+        
+        #current_visitor.score = score
+        
+        # # visitor = get_object_or_404(Visitor, pk=id)
+        # visitor = Visitor.objects.all()
+        # current_visitor = Visitor.objects.filter(pk=request.user)
+        # #user = User.objects.all()
+        # context = {
+        #     'score':score,
+        #     'correct':correct,
+        #     #'users':user,
+        #     'visitors':visitor,
+        # }
+        # current_visitor.score = score
+        # current_visitor.save()
         return render(request,'Quiz/result.html',context)
+    
     
     else:
         questions=QuesModel.objects.all()
         context = {
             'questions':questions
         }
-        return render(request,'Quiz/home.html',context)
+        return render(request,'Quiz/createQuizSlider.html',context)
 
 
-    
+def makevisitor(request) :
+    return render(request,'Quiz/addVisitor.html')
+
+# 이름, 성별, 관계, 점수
+def visitor(request) :
+    new_visitor = Visitor()
+    new_visitor.name = request.POST['name']
+    new_visitor.gender = request.POST['gender']
+    new_visitor.date = request.POST['date']
+    #new_visitor.score = request.POST['score']
+
+    new_visitor.save()
+
+    return redirect('home') 
+
+
 # # 문제만들기
 def addQuestion(request) :
-    return render(request, 'Quiz/addQuestion.html')
+    return render(request, 'Quiz/makequiz.html')
 
 def question(request):
     new_question = QuesModel()
-    new_question.writer = request.user
+    # new_question.writer = request.user
     #new_question.op1 = request.POST['op1']
     #new_question.op2 = request.POST['op2']
     new_question.ans = request.POST['ans']

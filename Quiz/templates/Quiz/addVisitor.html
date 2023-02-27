@@ -1,0 +1,16 @@
+<div>
+
+    <form action="{% url 'visitor' %}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        
+        <!-- 이름, 성별, 관계, 점수 -->
+        <p> 이름 : <input type="text" name="name"></p>
+        <p> 성별 : <input type="radio" name="gender" id="radio1" value="남자">
+                    <label class="form-check-label" for="radio1">남자</label>
+                    <input type="radio" name="gender" id="radio2" value="여자">
+                    <label class="form-check-label" for="radio2">여자</label></p>
+        <p> 우리가 처음 만난날은? : <input type="text" name="date"></p>        
+                
+        <button type="submit">완료</button> </form>        
+
+</div>
